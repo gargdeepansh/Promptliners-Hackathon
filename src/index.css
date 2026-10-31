@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-ink: var(--ink);
+  --color-line: var(--line);
+  --color-muted: var(--muted);
+
+  --color-accent-teal: var(--accent-teal);
+  --color-accent-orange: var(--accent-orange);
+  --color-accent-red: var(--accent-red);
+}
+
+:root {
+  --paper: #F8FAFC;
+  --surface: #FFFFFF;
+  --surface-raised: #F1F5F9;
+  --ink: #0F172A;
+  --line: #E2E8F0;
+  --muted: #64748B;
+  --accent-teal: #059669;
+  --accent-orange: #D97706;
+  --accent-red: #DC2626;
+}
+
+:root[data-theme="dark"],
+.dark {
+  --paper: #0B0F17;
+  --surface: #121824;
+  --surface-raised: #1A2333;
+  --ink: #F8FAFC;
+  --line: #1E293B;
+  --muted: #94A3B8;
+  --accent-teal: #10B981;
+  --accent-orange: #F59E0B;
+  --accent-red: #EF4444;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0B0F17;
+    --surface: #121824;
+    --surface-raised: #1A2333;
+    --ink: #F8FAFC;
+    --line: #1E293B;
+    --muted: #94A3B8;
+    --accent-teal: #10B981;
+    --accent-orange: #F59E0B;
+    --accent-red: #EF4444;
+  }
+}
+
+* {
+  border-color: var(--line);
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background-color: color-mix(in srgb, var(--surface) 80%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Sortie",
+  "description": "Clear your folders and expenses in 60 second runs. Sortie groups your backlog into cards for rapid triage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
